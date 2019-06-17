@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Current Weather</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div id="app" class="weather_box">
+        <div class="weather_info">
+            <h1>Weather Map</h1>
+            <div class="current_Weather">
+                <div class="current_Weather1">
+                    <p class="date">{{ date }}</p>
+                    <p class="weather_city">長野市</p>
+                    <p class="weather_condition">{{ condition }}</p>
+                </div>
+                <div class="current_Weather2">
+                    <div v-if="condition === '快晴'"><img src="img/clear.png" alt="快晴" width="300px" height="300px"></div>
+                    <div v-else-if="condition === '晴れ'"><img src="img/harfclear.png" alt="晴れ" width="300px" height="300px"></div>
+                    <div v-else-if="condition === 'くもり'"><img src="img/clouds.png" alt="くもり" width="300px" height="300px"></div>
+                    <div v-else-if="condition === '雨'|| condition === '小雨'"><img src="img/rain.png" alt="雨" width="300px" height="300px"></div>
+                    <div v-else-if="condition === 'キリ'"><img src="img/fog.png" alt="キリ" width="300px" height="300px"></div>
+                    <div v-else-if="condition === '雷'"><img src="img/thunder.png" alt="雷" width="300px" height="300px"></div>
+                    <div v-else-if="condition === '雪'"><img src="img/snow.png" alt="雪" width="300px" height="300px"></div>
+                </div>
+                <div class="current_Weather3">
+                    <p class="weather_temp">現在の気温 (&deg;C)<br>{{ temp }}</p>
+                    <p class="weather_max_temp">最高 (&deg;C)<br>{{ max_temp }}</p>
+                    <p class="weather_min_temp">最低 (&deg;C)<br>{{ min_temp }}</p>
+                </div>
+            </div>
+            <div class="hour3List">
+                <div class="hour3">
+                    <p>{{ hour1date }}</p>
+                    <p>{{ hour1weather }}</p>
+                    <div v-if="hour1weather === '快晴'"><img src="img/clear.png" alt="快晴"></div>
+                    <div v-else-if="hour1weather === '晴れ'"><img src="img/harfclear.png" alt="晴れ"></div>
+                    <div v-else-if="hour1weather === 'くもり'"><img src="img/clouds.png" alt="くもり"></div>
+                    <div v-else-if="hour1weather === '雨'|| hour1weather === '小雨'"><img src="img/rain.png" alt="雨"></div>
+                    <div v-else-if="hour1weather === 'キリ'"><img src="img/fog.png" alt="キリ"></div>
+                    <div v-else-if="hour1weather === '雷'"><img src="img/thunder.png" alt="雷"></div>
+                    <div v-else-if="hour1weather === '雪'"><img src="img/snow.png" alt="雪"></div>
+                    <p class="weather_max_temp">最高 (&deg;C)<br>{{ hour1max_temp }}</p>
+                    <p class="weather_min_temp">最低 (&deg;C)<br>{{ hour1min_temp }}</p>
+                </div>
+                <div class="hour3">
+                    <p>{{ hour2date }}</p>
+                    <p>{{ hour2weather }}</p>
+                    <div v-if="hour2weather === '快晴'"><img src="img/clear.png" alt="快晴"></div>
+                    <div v-else-if="hour2weather === '晴れ'"><img src="img/harfclear.png" alt="晴れ"></div>
+                    <div v-else-if="hour2weather === 'くもり'"><img src="img/clouds.png" alt="くもり"></div>
+                    <div v-else-if="hour2weather === '雨'|| hour2weather === '小雨'"><img src="img/rain.png" alt="雨"></div>
+                    <div v-else-if="hour2weather === 'キリ'"><img src="img/fog.png" alt="キリ"></div>
+                    <div v-else-if="hour2weather === '雷'"><img src="img/thunder.png" alt="雷"></div>
+                    <div v-else-if="hour2weather === '雪'"><img src="img/snow.png" alt="雪"></div>
+                    <p class="weather_max_temp">最高 (&deg;C)<br>{{ hour2max_temp }}</p>
+                    <p class="weather_min_temp">最低 (&deg;C)<br>{{ hour2min_temp }}</p>
+                </div>
+                <div class="hour3">
+                    <p>{{ hour3date }}</p>
+                    <p>{{ hour3weather }}</p>
+                    <div v-if="hour3weather === '快晴'"><img src="img/clear.png" alt="快晴"></div>
+                    <div v-else-if="hour3weather === '晴れ'"><img src="img/harfclear.png" alt="晴れ"></div>
+                    <div v-else-if="hour3weather === 'くもり'"><img src="img/clouds.png" alt="くもり"></div>
+                    <div v-else-if="hour3weather === '雨'|| hour3weather === '小雨'"><img src="img/rain.png" alt="雨"></div>
+                    <div v-else-if="hour3weather === 'キリ'"><img src="img/fog.png" alt="キリ"></div>
+                    <div v-else-if="hour3weather === '雷'"><img src="img/thunder.png" alt="雷"></div>
+                    <div v-else-if="hour3weather === '雪'"><img src="img/snow.png" alt="雪"></div>
+                    <p class="weather_max_temp">最高 (&deg;C)<br>{{ hour3max_temp }}</p>
+                    <p class="weather_min_temp">最低 (&deg;C)<br>{{ hour3min_temp }}</p>
+                </div>
+                <div class="hour3">
+                    <p>{{ hour4date }}</p>
+                    <p>{{ hour4weather }}</p>
+                    <div v-if="hour4weather === '快晴'"><img src="img/clear.png" alt="快晴"></div>
+                    <div v-else-if="hour4weather === '晴れ'"><img src="img/harfclear.png" alt="晴れ"></div>
+                    <div v-else-if="hour4weather === 'くもり'"><img src="img/clouds.png" alt="くもり"></div>
+                    <div v-else-if="hour4weather === '雨'|| hour4weather === '小雨'"><img src="img/rain.png" alt="雨"></div>
+                    <div v-else-if="hour4weather === 'キリ'"><img src="img/fog.png" alt="キリ"></div>
+                    <div v-else-if="hour4weather === '雷'"><img src="img/thunder.png" alt="雷"></div>
+                    <div v-else-if="hour4weather === '雪'"><img src="img/snow.png" alt="雪"></div>
+                    <p class="weather_max_temp">最高 (&deg;C)<br>{{ hour4max_temp }}</p>
+                    <p class="weather_min_temp">最低 (&deg;C)<br>{{ hour4min_temp }}</p>
+                </div>
+                <div class="hour3">
+                    <p>{{ hour5date }}</p>
+                    <p>{{ hour5weather }}</p>
+                    <div v-if="hour5weather === '快晴'"><img src="img/clear.png" alt="快晴"></div>
+                    <div v-else-if="hour5weather === '晴れ'"><img src="img/harfclear.png" alt="晴れ"></div>
+                    <div v-else-if="hour5weather === 'くもり'"><img src="img/clouds.png" alt="くもり"></div>
+                    <div v-else-if="hour5weather === '雨'|| hour5weather === '小雨'"><img src="img/rain.png" alt="雨"></div>
+                    <div v-else-if="hour5weather === 'キリ'"><img src="img/fog.png" alt="キリ"></div>
+                    <div v-else-if="hour5weather === '雷'"><img src="img/thunder.png" alt="雷"></div>
+                    <div v-else-if="hour5weather === '雪'"><img src="img/snow.png" alt="雪"></div>
+                    <p class="weather_max_temp">最高 (&deg;C)<br>{{ hour5max_temp }}</p>
+                    <p class="weather_min_temp">最低 (&deg;C)<br>{{ hour5min_temp }}</p>
+                </div>
+                <div class="hour3">
+                    <p>{{ hour6date }}</p>
+                    <p>{{ hour6weather }}</p>
+                    <div v-if="hour6weather === '快晴'"><img src="img/clear.png" alt="快晴"></div>
+                    <div v-else-if="hour6weather === '晴れ'"><img src="img/harfclear.png" alt="晴れ"></div>
+                    <div v-else-if="hour6weather === 'くもり'"><img src="img/clouds.png" alt="くもり"></div>
+                    <div v-else-if="hour6weather === '雨'|| hour6weather === '小雨'"><img src="img/rain.png" alt="雨"></div>
+                    <div v-else-if="hour6weather === 'キリ'"><img src="img/fog.png" alt="キリ"></div>
+                    <div v-else-if="hour6weather === '雷'"><img src="img/thunder.png" alt="雷"></div>
+                    <div v-else-if="hour6weather === '雪'"><img src="img/snow.png" alt="雪"></div>
+                    <p class="weather_max_temp">最高 (&deg;C)<br>{{ hour6max_temp }}</p>
+                    <p class="weather_min_temp">最低 (&deg;C)<br>{{ hour6min_temp }}</p>
+                </div>
+                <div class="hour3">
+                    <p>{{ hour7date }}</p>
+                    <p>{{ hour7weather }}</p>
+                    <div v-if="hour7weather === '快晴'"><img src="img/clear.png" alt="快晴"></div>
+                    <div v-else-if="hour7weather === '晴れ'"><img src="img/harfclear.png" alt="晴れ"></div>
+                    <div v-else-if="hour7weather === 'くもり'"><img src="img/clouds.png" alt="くもり"></div>
+                    <div v-else-if="hour7weather === '雨'|| hour7weather === '小雨'"><img src="img/rain.png" alt="雨"></div>
+                    <div v-else-if="hour7weather === 'キリ'"><img src="img/fog.png" alt="キリ"></div>
+                    <div v-else-if="hour7weather === '雷'"><img src="img/thunder.png" alt="雷"></div>
+                    <div v-else-if="hour7weather === '雪'"><img src="img/snow.png" alt="雪"></div>
+                    <p class="weather_max_temp">最高 (&deg;C)<br>{{ hour7max_temp }}</p>
+                    <p class="weather_min_temp">最低 (&deg;C)<br>{{ hour7min_temp }}</p>
+                </div>
+                <div class="hour3">
+                    <p>{{ hour8date }}</p>
+                    <p>{{ hour8weather }}</p>
+                    <div v-if="hour8weather === '快晴'"><img src="img/clear.png" alt="快晴"></div>
+                    <div v-else-if="hour8weather === '晴れ'"><img src="img/harfclear.png" alt="晴れ"></div>
+                    <div v-else-if="hour8weather === 'くもり'"><img src="img/clouds.png" alt="くもり"></div>
+                    <div v-else-if="hour8weather === '雨'|| hour8weather === '小雨'"><img src="img/rain.png" alt="雨"></div>
+                    <div v-else-if="hour8weather === 'キリ'"><img src="img/fog.png" alt="キリ"></div>
+                    <div v-else-if="hour8weather === '雷'"><img src="img/thunder.png" alt="雷"></div>
+                    <div v-else-if="hour8weather === '雪'"><img src="img/snow.png" alt="雪"></div>
+                    <p class="weather_max_temp">最高 (&deg;C)<br>{{ hour8max_temp }}</p>
+                    <p class="weather_min_temp">最低 (&deg;C)<br>{{ hour8min_temp }}</p>
+                </div>
+
+
+
+            </div>
+        </div>
+        <div v-if="condition === '雨'|| condition === '小雨' || condition === '雷雨'" class="back_img_rain"></div>
+        <div v-else-if="condition === 'くもり'" class="back_img_cloudy"></div>
+        <div v-else-if="condition === '快晴' || condition === '晴れ'" class="back_img_sunny"></div>
+        <div v-else-if="condition === '雷'" class="back_img_thunder"></div>
+        <div v-else-if="condition === 'キリ'" class="back_img_fog"></div>
+        <div v-else-if="condition === '雪'" class="back_img_snow"></div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.rawgit.com/SSENSE/vue-carousel/6823411d/dist/vue-carousel.min.js"></script>
+    <script src="app.js"></script>
+</body></html>

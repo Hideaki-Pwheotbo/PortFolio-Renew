@@ -1,0 +1,150 @@
+body {
+    background-color: #000;
+}
+
+.weather_box {
+    width 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.weather_info {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 98%;
+    padding: 30px 0;
+    background-color: rgba(0, 0, 0, 0.3);
+
+}
+
+.weather_info h1 {
+    font-size: 40px;
+    color: #eaeaea;
+    text-shadow: 4px 4px 9px #262626;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+.weather_info p {
+    font-size: 25px;
+    color: #eaeaea;
+    text-shadow: 2px 2px 3px #272727;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.current_Weather {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin: 0 auto;
+}
+
+
+
+
+.back_img {
+    width: 100vw;
+    height: 100vh;
+}
+
+.hour3List {
+    display: flex;
+    margin-top: 50px;
+}
+
+.hour3List p {
+    font-size: 16px;
+    line-height: 23px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.hour3List div {
+    max-width: 100px;
+    margin: 0 auto;
+}
+
+.hour3List div img {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.weather_temp {
+    line-height: 1.4;
+}
+
+p.weather_max_temp {
+    line-height: 1.4;
+    color: #ff7171;
+}
+
+p.weather_min_temp {
+    line-height: 1.4;
+    color: #539cff;
+}
+
+p.weather_condition {
+    font-size: 50px;
+}
+
+.current_Weather1,
+.current_Weather3 {
+    width: 33.333%;
+}
+
+.current_Weather2 {
+    width: 300px;
+}
+
+.back_img_cloudy {
+    background: url(img/cloudy.jpg)no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.back_img_rain {
+    background: url(img/rain.jpg)no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.back_img_sunny {
+    background: url(img/sunny.jpg)no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.back_img_thunder {
+    background: url(img/thunder.jpg)no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.back_img_fog {
+    background: url(img/mist.jpg)no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.back_img_snow {
+    background: url(img/snow.jpg)no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+}

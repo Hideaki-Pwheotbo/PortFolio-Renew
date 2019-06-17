@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="HideakiのWebPortfolioです。">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Work「CafeAronde」| Hideaki Owa | Web Portfolio</title>
+    <link rel="icon" href="../../images/icon.ico">
+    <link rel="stylesheet" href="https://use.typekit.net/xjz5rmt.css">
+    <link rel="stylesheet" href="../../css/sanitize.css">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+    
+    <input type="checkbox" id="navTgl">
+    <label for="navTgl" class="open"><span></span></label>
+    <label for="navTgl" class="close"></label>
+    <nav class="menu">
+        <h2>MENU</h2>
+        <ul>
+            <li><a href="#">TOP</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#work">WORK</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+    <div class="contents">
+        <header class="header-Cafe">
+            <div class="logo"><a href="#"><img src="../../images/logo.png" alt="Logo"></a></div>
+        </header>
+        <section class="top-Cafe" id="top">
+            <div class="top-Cafe_Box">
+                <div class="top-Cafe_Box_Inner">
+                    <div class="top-Cafe_Box_Inner_img">
+                        <img src="../../images/cafearonde_pc_small.jpg" alt="CafeAronde_PC">
+                        <img src="../../images/cafearonde_sp_small.jpg" alt="CafeAronde_SP">
+                    </div>
+                    <div class="top-Cafe_Box_Inner_Text">
+                        <h2>架空カフェサイト</h2>」
+                        <h2>「 CafeAronde 」</h2>
+                        <p>古い町並みの中にありながら開放感のあるカフェのイメージとして作成しました。</p>
+                        <p>コンセプト</p>
+                        <ul>
+                            <li>開放感と清潔さを表現する。</li>
+                            <li>レスポンシブに対応</li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="copyright">
+                        <small>copyright © 2019 Hideaki Owa.</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="footer">
+            <div class="footer_Scroll">
+                <a href="#top"><span></span><span></span><span></span>TOP</a>
+            </div>
+            <div class="sns">
+                <a href="#"><img src="../../images/twitter_icon.png" alt="Twitter"></a>
+                <a href="#"><img src="../../images/instagram_icon.png" alt="Instagram"></a>
+            </div>
+            <small>Hideaki owa.</small>
+        </footer>
+    </div>
+
+    
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    
+    <script src="js/smooth-scroll.js"></script>
+    <script type="text/javascript">
+        var scroll = new SmoothScroll('a[href*="#"]',{
+            speed: 1000,
+        });
+        
+    </script>
+    <script src="js/slick.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+
+            $('.slider').slick({
+                dots: true,
+                appendDots: ("#apDots"),
+                infinite: true,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                speed: 900,
+                fade: true,
+                cssEase: 'linear'
+            });
+
+        });
+    </script>
+</body>
+
+</html>

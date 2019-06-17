@@ -1,0 +1,15 @@
+/*-- slideUP用 --*/
+
+.sa {
+    opacity: 0;
+    transition: opacity .7s ease, transform .7s ease;
+}
+
+.sa.show {
+    opacity: 1;
+    transform: none;
+}
+
+.sa--up {
+    transform: translate(0, 100px);
+}
