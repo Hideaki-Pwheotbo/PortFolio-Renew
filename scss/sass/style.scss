@@ -42,6 +42,7 @@ $background: #444444;
 $text_color: #1f1f1f;
 $text_hover: #cbcbcb;
 $contact_border: #939393;
+$text_color_W: #fdfdfd;
 /*-- left-background-color --*/
 
 
@@ -163,16 +164,15 @@ ul li {
     overflow: hidden;
 }
 video {
-    // min-width: 100%;
-    // min-height: 100%;
+    min-width: 100%;
+    min-height: 100%;
     width: auto;
-    height: 100%;
-    margin: auto 0;
-    position: absolute;
+    height: auto;
+    margin: 0 auto;
+    position: fixed;
     top: 0;
     right: 0;
     z-index: -100;
-    clip-path: polygon(60% 0, 100% 0%, 100% 100%, 40% 100%);
     background-size: cover;
     filter: grayscale(1);
     
@@ -193,7 +193,7 @@ video {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    border: 1px solid rgb(71, 71, 71);
+    border: 1px solid #fdfdfd;
 }
 
 .header {
@@ -216,7 +216,7 @@ video {
             & ul {
                 & li {
                     margin-top: 15px;
-                    margin-left: -100px;
+                    margin-left: -150px;
                     animation: nav 0.4s ease-in-out 2.5s forwards;
                     &:nth-child(2) {
                         animation-delay: 2.6s;
@@ -228,8 +228,10 @@ video {
                         animation-delay: 2.8s;
                     }
                     & a {
-                        font-size: 1.5rem;
-                        font-weight: 100;
+                        font-size: 1.8rem;
+                        font-weight: 200;
+                        color: $text_color_W;
+                        letter-spacing: 1px;
                     }
                 }
             }
@@ -270,8 +272,8 @@ video {
     height: 24px;
     margin-left: -12px;
     transform: rotate(-45deg);
-    border-bottom: 1px solid #111;
-    border-left: 1px solid #111;
+    border-bottom: 1px solid #fdfdfd;
+    border-left: 1px solid #fdfdfd;
     animation: sdb 2s infinite;
     opacity: 0;
   }
@@ -331,18 +333,23 @@ video {
             top: 50%;
             left: 50%;
             transform: translate(-50%,-50%);
+            animation: fadeIn 2s 3.5s ;
+            animation-fill-mode: backwards;
             & h1 {
                 text-align: center;
                 font-size: 6rem;
                 margin-top: 0;
                 margin-bottom: 10px;
                 letter-spacing: 1px;
-                color: $text-color;
+                color: $text_color_W;
+                font-weight: 600;
             }
             & p {
                 text-align: center;
                 font-size: 2rem;
-                color: $text-color;
+                color: $text_color_W;
+                font-weight: 200;
+                letter-spacing: 2px;
             }
         }
     }
@@ -350,23 +357,148 @@ video {
 
 /*-- top END --*/
 
-/*-- sub_Title --*/
+/*-- section_Title --*/
+.section_Title {
+  padding-top: 80px;
+  & h2 {
+    font-family: timberline, sans-serif;
+    font-weight: 100;
+    letter-spacing: 20px;
+    color: #e8e8e8;
+    font-size: 25rem;
+    text-align: center;
+  }  
+}
+.section_Line {
+  position: absolute;
+  left: -50px;
+  & span {
+    writing-mode: vertical-rl;
+    margin-top: 190px;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin-left: 5px;
+    &::before {
+      content: '';
+      position: absolute;
+      border-left: 1px solid #000;
+      height: 500px;
+      left: 0;
+      top: -250px;
+    }
+  }
+}
 
 
 
 
 
 
-
-/*-- work_web END --*/
-
-/*-- work_photo --*/
+/*-- work --*/
+.work {
+  width: 100%;
+  background-color: #fdfdfd;
+  height: 950px;
+  &_Inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 60px 0 250px;
+    position: relative;
+    &_Box {
+      max-width: 1024px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row-reverse;
+      &_Img {
+        & .site_Img {
+          & img {
+            max-width: 430px;
+            margin-top: -100px;
+            border: 1px solid #c4c4c4;
+          }
+      }
+        & .link_Img {
+          display: block;
+          margin-top: 5px;
+          & img {
+            width: 16px;
+            margin-bottom: 3px;
+          }
+          & span {
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 1.4rem;
+            line-height: 10px;
+          }
+        }
+        
+      }
+      &_Text {
+        width: 100%;
+        &_Name {
+          & h3 {
+            font-size: 6rem;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 100;
+            letter-spacing: 5px;
+            margin-top: -100px;
+            line-height: 2rem;
+          }
+          & span {
+            display: block;
+            font-size: 1.3rem;
+          }
+        }
+        &_Item {
+          padding-right: 80px;
+          margin-top: 50px;
+          & p {
+            font-size: 1.4rem;
+            font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "メイリオ", "ＭＳ Ｐゴシック", sans-serif;
+            letter-spacing: 1px;
+            line-height: 3rem;
+          }
+        }
+      }
+    }
+    &_List {
+      text-align: right;
+      margin-top: 30px;
+      position: absolute;
+      right: 130px;
+      bottom: 100px;
+      & ul li {
+        font-size: 3.5rem;
+        
+        margin-top: 10px;
+        & button {
+          border: none;
+          background-color: transparent;
+          cursor: pointer;
+          outline: none;
+          padding: 0;
+          appearance: none;
+          font-weight: 100;
+        }
+      }
+    }
+  }
+}
+/*-- work END--*/
 
 
 
 /*-- work_photo END --*/
 
 /*-- footer --*/
+.footer {
+  width: 100%;
+  height: 300px;
+  &_Inner {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+}
 
 
 /*-- footer END --*/
@@ -376,10 +508,72 @@ video {
 
 /*-- work Page END --*/
 
-/*-- about Page --*/
+/*-- about --*/
+.about {
+  width: 100%;
+  background-color: #fdfdfd;
+  &_Inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 60px 0;
+    position: relative;
+    &_Box {
+      max-width: 1024px;
+      margin: 0 auto;
+      display: flex;
+      &_Img {
+        & img {
+          max-width: 430px;
+          margin-top: -100px;
+        }
+        &_List {
+          text-align: right;
+          margin-top: 30px;
+          & ul li {
+            font-size: 3.5rem;
+            font-weight: 100;
+            margin-top: 10px;
+            & button {
+              border: none;
+              background-color: transparent;
+              cursor: pointer;
+              outline: none;
+              padding: 0;
+              appearance: none;
+              font-weight: 100;
+            }
+          }
+        }
+      }
+      &_Text {
+        width: 100%;
+        &_Name {
+          & h3 {
+            font-size: 6rem;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 100;
+            letter-spacing: 5px;
+            margin-left: 50px;
+            margin-top: -50px;
+          }
+        }
+        &_Item {
+          margin-left: 100px;
+          margin-top: 30px;
+          & p {
+            font-size: 1.4rem;
+            font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo", "メイリオ", "ＭＳ Ｐゴシック", sans-serif;
+            letter-spacing: 1px;
+            line-height: 3rem;
+          }
+        }
+      }
+    }
+  }
+}
 
 
-/*-- about Page END --*/
+/*-- about END --*/
 
 /*-- contact Page --*/
 
